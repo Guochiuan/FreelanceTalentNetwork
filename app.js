@@ -1,4 +1,4 @@
-if (process.env.NODE_ENV == "production") {
+if (process.env.NODE_ENV !== "production") {
     require('dotenv').config();
 }
 
@@ -17,7 +17,7 @@ const User = require('./models/user');
 
 
 const userRoutes = require('./routes/users');
-const campgroundRoutes = require('./routes/campgrounds');
+const freelancerRoutes = require('./routes/freelancers');
 const reviewRoutes = require('./routes/reviews');
 
 const MongoDBStore = require("connect-mongo");
@@ -94,8 +94,8 @@ app.use((req, res, next) => {
 
 
 app.use('/', userRoutes);
-app.use('/campgrounds', campgroundRoutes)
-app.use('/campgrounds/:id/reviews', reviewRoutes)
+app.use('/freelancers', freelancerRoutes)
+app.use('/freelancers/:id/reviews', reviewRoutes)
 
 
 app.get('/', (req, res) => {
