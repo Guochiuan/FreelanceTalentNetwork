@@ -1,7 +1,7 @@
 mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
+    style: 'mapbox://styles/mapbox/outdoors-v10', // stylesheet location
     center: freelancer.geometry.coordinates, // starting position [lng, lat]
     zoom: 10 // starting zoom
 });
